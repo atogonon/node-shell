@@ -1,4 +1,6 @@
 // Output a prompt
+
+const pwd=require('./pwd')
 process.stdout.write('prompt > ');
 
 // The stdin 'data' event fires after a user types in a line
@@ -8,8 +10,5 @@ process.stdin.on('data', (data) => {
     process.stdout.write('You typed: ' + cmd);
     process.stdout.write('\nprompt > ');
 
-    if(cmd === 'pwd'){
-        // return `Report directory is ${process.report.directory}`;
-        process.stdout.write(`Report directory is ${process.cwd()}`);
-    };
+    pwd();
 });
