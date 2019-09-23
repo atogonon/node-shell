@@ -1,6 +1,8 @@
 // Output a prompt
 
-const pwd=require('./pwd')
+const pwd = require('./pwd');
+const lsFunc = require('./ls');
+
 process.stdout.write('prompt > ');
 
 // The stdin 'data' event fires after a user types in a line
@@ -10,5 +12,7 @@ process.stdin.on('data', (data) => {
     process.stdout.write('You typed: ' + cmd);
     process.stdout.write('\nprompt > ');
 
-    pwd();
+    pwd(cmd);
+
+    lsFunc(cmd);
 });

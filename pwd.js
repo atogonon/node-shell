@@ -6,5 +6,5 @@ function pwd (cmd) {
   };
 }
 
-module.exports=pwd
+module.exports = pwd;
 
